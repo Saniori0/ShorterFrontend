@@ -1,0 +1,28 @@
+{% extends "app.twig" %}
+{% import "components/form.twig" as form %}
+{% set title = "Главная" %}
+
+{% block content %}
+
+    <form id="HomeForm" method="POST" action="/accounts/links" ajax>
+        {{ form.input("InputURL", "url", "Введите ссылку...") }}
+        <p class="error" id="URLFormatError">Введенный текст не является ссылкой</p>
+        {{ form.submit("Сократить") }}
+    </form>
+
+    <h2 style="margin-top: 10px;">Ссылки</h2>
+    <p class="nothave" id="NotHaveLinks">Здесь ничего нет</p>
+    <div class="pagination_items" id="LinksPagination">
+        <ul class="list">
+            <li class="--clearfix"></li>
+        </ul>
+        <ul class="pages">
+        </ul>
+        <div class="--clearfix"></div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="assets/script/pages/home.js"></script>
+{% endblock %}

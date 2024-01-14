@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+
+    <base href="{{ base }}">
+    <link rel="stylesheet" href="assets/style/index.css?v=1">
+</head>
+<body>
+<div class="mainOverlay loading" id="Overlay">
+    <div class="mainLoader">
+        Загрузка...
+    </div>
+</div>
+<header class="mainHeader">
+    <div class="inner">
+        <span id="LoggedNickname" class="name"></span>
+        <a id="LogoutButton" class="logout">Выйти</a>
+    </div>
+</header>
+<main>
+    <h1>{{ title }}</h1>
+    {% block content %}
+    {% endblock %}
+    <div class="--clearfix"></div>
+</main>
+
+<script src="assets/script/config.js?v=1"></script>
+<script src="assets/script/validator.js?v=1"></script>
+<script src="assets/script/session.js?v=1"></script>
+<script src="assets/script/api.js?v=1"></script>
+<script src="assets/script/index.js?v=1"></script>
+{% block script %}
+{% endblock %}
+
+</body>
+</html>

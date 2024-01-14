@@ -1,0 +1,23 @@
+{% extends "app.twig" %}
+{% import "components/form.twig" as form %}
+{% set title = "Создать аккаунт" %}
+
+{% block content %}
+
+    <form id="CreateAccountForm" method="POST" action="/accounts" ajax>
+        {{ form.input("InputUsername", "username", "Имя пользователя") }}
+        <p class="error" id="UsernameFormatError" style="margin-bottom: 10px;">Имя пользователя должно состоять минимум из 6 символов и быть не больше 24 символов</p>
+        {{ form.input("InputEmail", "email", "Почта", "email") }}
+        <p class="error" id="EmailFormatError" style="margin-bottom: 10px;">Почта должна соответствовать формату</p>
+        <p class="error" id="EmailBusyError" style="margin-bottom: 10px;">Пользователь с такой почтой существует</p>
+        {{ form.input("InputPassword", "password", "Пароль", "password") }}
+        <p class="error" id="PasswordFormatError" style="margin-bottom: 10px;">Пароль должен состоять минимум из 6 символов и быть не больше 24 символов</p>
+        {{ form.submit("Создать аккаунт") }}
+    </form>
+    <a href="/sign-in-account" style="margin-top: 2.5px;">Есть аккаунт?</a>
+
+{% endblock %}
+
+{% block script %}
+    <script src="assets/script/pages/create-account.js"></script>
+{% endblock %}

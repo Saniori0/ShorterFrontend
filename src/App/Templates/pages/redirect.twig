@@ -1,0 +1,14 @@
+{% extends "app.twig" %}
+{% set title = "Переход по ссылке..." %}
+
+
+{% block content %}
+    <input type="text" id="LinkAlias" value="{{ alias }}" hidden>
+    <div class="suspect" id="Suspect">
+        <p>Ссылка может быть небезопасна? <a id="SuspectLink" href="">Перейти</a></p>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="assets/script/pages/redirect.js"></script>
+{% endblock %}

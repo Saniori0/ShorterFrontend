@@ -1,0 +1,33 @@
+{% extends "app.twig" %}
+{% set title = "Статистика" %}
+
+
+{% block content %}
+    <p class="nothave" id="NotHaveStats">Здесь ничего нет</p>
+    <input type="text" id="LinkId" value="{{ id }}" hidden>
+
+    <div id="Stats">
+
+    <h2>Всего запросов: <span id="Quantity"></span></h2>
+    <h2 style="margin-top: 10px;">По странам</h2>
+    <div class="countryStats link" style="margin-top: 10px;background-color:var(--backgroundColor1);">
+        <div id="CountryStats">
+        </div>
+    </div>
+
+    <h2 style="margin-top: 20px;">Запросы</h2>
+    <div class="pagination_items" id="StatsPagination">
+        <ul class="list">
+            <li class="--clearfix"></li>
+        </ul>
+        <ul class="pages">
+        </ul>
+        <div class="--clearfix"></div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="assets/script/pages/statistics.js"></script>
+{% endblock %}

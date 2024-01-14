@@ -1,0 +1,12 @@
+{% macro input(id, name = "", placeholder = "", type = "text", value = null, options = []) %}
+    <div class="form-group {{ options.class }}">
+        <input autocomplete="off" placeholder="{{ placeholder }}" type="{{ type }}" id={{ id }} value="{{ value }}" name="{{ name }}"/>
+        <div class="--clearfix"></div>
+    </div>
+{% endmacro %}
+{% macro submit(text = "") %}
+    <div class="form-group {{ options.class }}">
+        <input type="submit" value="{{ text }}">
+        <div class="--clearfix"></div>
+    </div>
+{% endmacro %}
